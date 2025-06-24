@@ -1,0 +1,43 @@
+{
+  "name": "Rishi Chaudhary",
+  "version": "1.0.0",
+  "description": "My resume website.. Please feel free to look through and contact me for further details.",
+  "main": "index.html",
+
+  "keywords": [
+    "resume",
+    "portfolio",
+    "futuristic",
+    "animations",
+    "css",
+    "javascript",
+    "html",
+    "neon",
+    "minimalistic",
+    "responsive",
+    "Rishi Chaudhary",
+    "rishi chaudhary",
+    "rishichaudhary",
+    "RishiChaudhary"
+  ],
+  "author": "Rishi Chaudhary",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/futuristic-resume-website.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yourusername/futuristic-resume-website/issues"
+  },
+  "homepage": "https://github.com/yourusername/futuristic-resume-website#readme",
+  "devDependencies": {},
+  "dependencies": {},
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ]
+} 
