@@ -520,6 +520,55 @@ class DynamicBackground {
 // Initialize dynamic background
 const dynamicBackground = new DynamicBackground();
 
+// Projects Carousel Functionality
+(function() {
+  const grid = document.getElementById('projects-grid');
+  const cards = Array.from(grid.getElementsByClassName('project-card'));
+  const leftBtn = document.getElementById('carousel-left');
+  const rightBtn = document.getElementById('carousel-right');
+  const carousel = document.querySelector('.projects-carousel');
+  let currentIndex = 0;
+  let cardsToShow = 3;
+
+  function updateCardsToShow() {
+    if (window.innerWidth <= 800) {
+      cardsToShow = 1;
+    } else {
+      cardsToShow = 3;
+    }
+  }
+
+  function updateCarousel() {
+    updateCardsToShow();
+    const viewportWidth = carousel.clientWidth;
+    const cardWidth = viewportWidth / cardsToShow;
+    const offset = currentIndex * cardWidth;
+    grid.style.transform = `translateX(-${offset}px)`;
+    leftBtn.style.visibility = currentIndex === 0 ? 'hidden' : 'visible';
+    rightBtn.style.visibility = (currentIndex >= cards.length - cardsToShow) ? 'hidden' : 'visible';
+  }
+
+  leftBtn.addEventListener('click', function() {
+    if (currentIndex > 0) {
+      currentIndex--;
+      updateCarousel();
+    }
+  });
+  rightBtn.addEventListener('click', function() {
+    if (currentIndex < cards.length - cardsToShow) {
+      currentIndex++;
+      updateCarousel();
+    }
+  });
+
+  window.addEventListener('resize', function() {
+    currentIndex = 0;
+    updateCarousel();
+  });
+
+  updateCarousel();
+})();
+
 // Performance optimization
 let ticking = false;
 
